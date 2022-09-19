@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="" rel="stylesheet">
+    <script src=""></script>
+    <script src=""></script>
+    <style>
+        body{
+            text-align: center;
+        }
+        img{
+            height: 200px;
+            width: 350px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $( "#imageListId" ).sortable({
+            update: function(event, ui) {
+                getIdsOfImages();
+            }//end update         
+            });
+        });
+          
+        function getIdsOfImages() {
+            var values = [];
+            $('.listitem').each(function (index) {
+                values.push($(this).attr("id")
+                        .replace("imageNo", ""));
+            });
+              
+            $('#outputvalues').val(values);
+        }
+    </script>
+    <body>
+        <h1 style="color:green">Images</h1>
+      
+    <b>Drag and drop </b>
+      
+    <div class="height"></div><br>
+      
+    <div id = "imageListId">
+        <div id="imageNo1" class = "listitem">
+            <img src="image1.png" alt="">
+        </div>
+          
+        <div id="imageNo2" class = "listitem">
+            <img src="image2.png" alt="">
+        </div>
+  
+        <div id="imageNo3" class = "listitem">
+            <img src="image3.png" alt="">
+        </div>
+  
+        <div id="imageNo4" class = "listitem">
+            <img src="image4.png" alt="">
+        </div>
+  
+        <div id="imageNo5" class = "listitem">
+            <img src="image5.png" alt="">
+        </div>
+  
+        <div id="imageNo6" class = "listitem">
+            <img src="image6.png" alt="">
+        </div>
+    </div>
+          
+    <div id="outputDiv">
+        
+        <input id="outputvalues" type="text" value="" />
+    </div>
+    </body>
+</head>
+<body>
+    
+</body>
+</html>
